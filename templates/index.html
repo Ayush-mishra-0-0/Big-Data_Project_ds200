@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ds200</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+    <nav   id="navbar" class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Project</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Overview</a>
+                
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="dashboard">Dashboard</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+                  Process
+                </a>
+          
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scrollspyHeading1">Data Collection</a></li>
+                  <li><a class="dropdown-item" href="#scrollspyHeading2">Data Preparation</a></li>
+                  <li><a class="dropdown-item" href="#scrollspyHeading3">Data Analysis</a></li>
+              </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Models Results
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Xgboost</a></li>
+                  <li><a class="dropdown-item" href="#">Ensemble</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#fileUploadModal">Find-Malware-In-Your-File</a>
+             </li>
+            </ul>
+            <div>
+                <a class="navbar-brand" href="https://twitter.com/home" target="_blank">Twitter</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="https://twitter.com/home">Linkedin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="modal fade" id="fileUploadModal" tabindex="-1" aria-labelledby="fileUploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fileUploadModalLabel">Find-Malware-In-Your-File</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- File upload form -->
+                    <form id="fileUploadForm"  enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <input type="file" class="form-control" name="file" id="file">
+                        </div>
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="malware-header" id="what-malware">
+      <div class="title"><h2 style="left: 500px; top: 100px;">What is Malware?</h2></div>
+      <p>Malware is a term used to describe malicious software, including spyware, ransomware, viruses, and worms. Malware is designed to cause harm to a computer system or network. It can steal sensitive information, such as financial data or personal information, and can also cause damage to the system or network. Malware can be spread through email attachments, infected websites, or infected files. It is important to have security software installed on your computer to protect against malware.</p>
+      <p></p>
+  </div>
+  <div class="malware-header2">
+    <div class="title1"><h2 style="left: 500px; top: 100px;">Types of Malware?</h2></div>
+</div>
+  <div class="malware-header1">
+    <div class="malware-grid">
+      <!-- First Row -->
+      <div class="malware-item">
+        <h3>Ramnit</h3>
+        <p>Additional line about Ramnit...</p>
+        <div class="popover-content" id="pop">
+          <p>Ramnit is a computer worm that primarily targets Windows operating systems. It is known for stealing sensitive information and compromising system security.</p>
+        </div>
+      </div>
+      <div class="malware-item">
+        <h3>Lollipop</h3>
+        <p>Additional line about Lollipop...</p>
+        <div class="popover-content" id="pop">
+          <p>Lollipop is an Android-based malware that typically spreads through malicious apps. It can steal personal data, display unwanted advertisements, and cause system instability.</p>
+        </div>
+      </div>
+      <div class="malware-item">
+        <h3>Kelihos_ver3</h3>
+        <p>Additional line about Kelihos_ver3...</p>
+        <div class="popover-content" id="pop">
+          <p>Kelihos is a botnet that has gone through multiple versions. It is used for various malicious activities, including spamming, distributed denial-of-service (DDoS) attacks, and spreading malware.</p>
+        </div>
+      </div>
+      <!-- Second Row -->
+      <div class="malware-item">
+        <h3>Vundo</h3>
+        <p>Additional line about Vundo...</p>
+        <div class="popover-content" id="pop">
+          <p>Vundo is a type of Trojan horse that infects Windows systems. It is known for its ability to download and install additional malware, steal sensitive information, and create backdoors for remote access.</p>
+        </div>
+      </div>
+      <div class="malware-item">
+        <h3>Simda</h3>
+        <p>Additional line about Simda...</p>
+        <div class="popover-content" id="pop">
+          <p>Simda is a sophisticated malware family that includes various malicious components. It is capable of stealing credentials, conducting click fraud, and facilitating other cybercriminal activities.</p>
+        </div>
+      </div>
+      <div class="malware-item">
+        <h3>Tracur</h3>
+        <p>Additional line about Tracur...</p>
+        <div class="popover-content" id="pop">
+          <p>Tracur is a type of malware designed to redirect web traffic and install additional malicious software on infected systems. It often spreads through compromised websites and malicious email attachments.</p>
+        </div>
+      </div>
+      <!-- Third Row -->
+      <div class="malware-item">
+        <h3>Kelihos_ver1</h3>
+        <p>Additional line about Kelihos_ver1...</p>
+        <div class="popover-content" id="pop">
+          <p>Kelihos version 1 was an early variant of the Kelihos botnet. Like its later versions, it was used for spamming, DDoS attacks, and other malicious activities.</p>
+        </div>
+      </div>
+      <div class="malware-item">
+        <h3>Obfuscator.ACY</h3>
+        <p>Additional line about Obfuscator.ACY...</p>
+        <div class="popover-content" id="pop">
+          <p>Obfuscator.ACY is a type of obfuscation tool used by malware authors to hide their code and evade detection by security software. It is commonly used in conjunction with other malware.</p>
+        </div>
+      </div>
+      <div class="malware-item">
+        <h3>Gatak</h3>
+        <p>Additional line about Gatak...</p>
+        <div class="popover-content" id="pop">
+          <p>Gatak is a type of malware that targets Windows systems. It is known for its stealthy behavior, including anti-analysis techniques and encryption of communication channels.</p>
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+<!-- button for scrolling up -->
+  <button
+      type="button"
+      class="btn btn-danger btn-floating btn-lg"
+      id="btn-back-to-top"
+      >
+      <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <hr>
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="#scrollspyHeading1">Data Collection</a></li>
+        <li class="nav-item"><a class="nav-link" href="#scrollspyHeading2">Data Preparation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#scrollspyHeading3">Data Analysis</a></li>
+      </ul>
+    </nav>
+  
+    <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
+      <h2 id="scrollspyHeading1" class="malware-header2">Data Collection</h2>
+      <div class="steps">
+        <p>
+          <strong style="color: blue;">Steps:</strong>
+          <ol>
+            <li>Identify Data Sources 
+              <p>
+                <ul>
+                  <li>train.7z - the raw data for the training set (MD5 hash = 4fedb0899fc2210a6c843889a70952ed)</li>
+                  <li>trainLabels.csv - the class labels associated with the training set</li>
+                  <li>test.7z - the raw data for the test set (MD5 hash = 84b6fbfb9df3c461ed2cbbfa371ffb43)</li>
+                </ul>
+              </p>
+            </li>
+            <li>Data Acquisition
+              <ul>
+                  <p> The main data sources for this project are provided by Microsoft.</p>
+                  <li><a href="https://www.kaggle.com/competitions/malware-classification/data">Source-1</a></li>
+                  <li><a href="https://www.kaggle.com/competitions/malware-classification/data">Source-2</a></li>
+                  <li><a href="https://www.kaggle.com/competitions/malware-classification/data">Source-3</a></li>
+                </ul>
+              </p>
+            </li>
+            <li>Data Extraction</li>
+            <li>Data Storage
+              <p>As data is so large, upto 200gb of data, we will use hadoop for storage</p>
+            </li>
+            <li>Data Validation</li>
+          </ol>
+        </p>
+      </div>
+      
+      
+      <h2 id="scrollspyHeading2" class="malware-header2">Data Preparation</h2>
+      <div class="steps">
+        <p>
+          <strong style="color: blue;">Steps:</strong>
+          <ol>
+            <li>Data Cleaning</li>
+            <li>Feature Selection</li>
+            <li>Data Transformation</li>
+            <li>Data Sampling</li>
+            <li>Data Splitting</li>
+          </ol>
+        </p>
+      </div>
+      
+      
+      <h2 id="scrollspyHeading3" class="malware-header2">Data Analysis</h2>
+      <div class="steps">
+        <p>
+          <strong style="color: blue;">Steps:</strong>
+          <ol>
+            <li>Exploratory Data Analysis (EDA)</li>
+            <li>Feature Engineering</li>
+            <li>Model Selection</li>
+            <li>Model Training and Evaluation</li>
+            <li>Result Interpretation</li>
+          </ol>
+        </p>
+      </div>
+     
+    </div>
+  <div class="malware-header">
+  <div class="title"><h2 style="left: 500px; top: 100px;">About</h2></div>
+  <p></p>
+  </div>
+        
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
