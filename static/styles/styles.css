@@ -14,7 +14,7 @@
    text-size-adjust: 100%;
    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
    -webkit-font-smoothing: antialiased;
-   background-color: var(--dark-black);
+   background-color: white;
    font-family: Arial, sans-serif;
  }
  
@@ -28,10 +28,51 @@
  .nav-item.dropdown:hover .dropdown-menu {
    display: block;
  }
- 
  /* Malware Header Styles */
- .malware-header,
- .malware-header2,
+.title {
+  margin-bottom: 20px;
+}
+
+.content {
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto; /* Center the content */
+  opacity: 0; /* Initially hide content */
+  transform: translateX(-100%); /* Initially position content outside the viewport */
+  transition: opacity 0.5s, transform 0.5s; /* Smooth transition for animation */
+}
+
+/* Class to make content visible when scrolled into view */
+.content-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.malware-header {
+  background-color: white; /* Dark background color */
+  color: black; /* Text color */
+  padding: 50px 20px; /* Padding for content */
+  text-align: center;
+  overflow: hidden;
+}
+
+.title h2 {
+  font-size: 36px; /* Larger font size for the title */
+  margin-bottom: 20px; /* Space below the title */
+  color: #70a9ff; /* Light blue title color */
+  font-family: DauphinPlain ;
+}
+
+
+
+/* Optional: Add hover effect for the header */
+.malware-header:hover {
+  background-color: #bdbbbb; /* Darken the background color on hover */
+}
+
+.content-heading:hover {
+  background-color: #bdbbbb;
+}
+
  .malware-header1 {
    height: 500px;
    width: 100%;
@@ -41,40 +82,47 @@
    padding: 20px;
    font-size: 20px;
  }
- 
- .malware-header2 {
-  height: 100px;
-  color: blue;
+ /* Malware Header Styles */
+.malware-header2 {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* Text color */
+  padding: 20px; /* Padding for content */
+  text-align: center;
+}
+/* Hide the step content by default */
+.step-content.hidden {
+  display: none;
 }
 
-.steps {
-  margin-left: 20px;
+
+.section {
+  margin-bottom: 50px; /* Add margin between sections */
 }
 
-.steps strong {
-  color: blue;
+.step {
+  margin-bottom: 20px; /* Add margin between steps */
+  background-color: #fff; /* Background color for steps */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  overflow: hidden; /* Ensure content doesn't overflow */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Transition effect */
 }
 
-.steps ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  color: rgb(31, 139, 9);
+.step:hover {
+  transform: translateY(-5px); /* Move up on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
 
-.steps li {
-  margin-bottom: 10px;
-  color: white;
+.step-content {
+  padding: 20px; /* Padding for step content */
 }
 
-.steps a {
-  color: white;
-  text-decoration: none;
+.source-links a {
+  display: block; /* Display links as block elements */
+  margin-bottom: 10px; /* Add margin between links */
+  color: blue; /* Link color */
 }
 
-.steps a:hover {
-  text-decoration: underline;
-}
  .malware-header1 {
    height: 550px; /* Adjust as needed */
    display: flex;
@@ -106,6 +154,11 @@
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    overflow: hidden; /* Ensure content doesn't overflow */
  }
+/* Malware Item Transition Effect */
+.malware-item-transition {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
 
  .malware-item h3 {
    margin-bottom: 5px;
@@ -154,18 +207,64 @@
 #what-malware p {
    color: white;
 }
- .malware-header p {
+ /* .malware-header p {
    position: absolute;
    top: 40%;
    left: 50%;
    transform: translate(-50%, -50%);
    text-align: center;
    color: #afeeee;
- }
+ } */
  
  .malware-header1 p {
    position: relative;
    text-align: center;
    color: #afeeee;
  }
- 
+
+
+ /* Initial styles for the rotating text effect */
+.cd-words-wrapper b {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease-out;
+  color: #70a9ff; 
+}
+
+/* Make the currently visible text visible */
+.cd-words-wrapper b.is-visible {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+/* Animation for rotating between text phrases */
+.cd-headline.slide .cd-words-wrapper {
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  width: 100%;
+  height: 100px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+/* Additional styles for the heading */
+.content-heading {
+  font-size: 36px; /* Adjust font size as needed */
+  font-weight: bold;
+  padding-top: 50px;
+  text-align: center;
+  color: #70a9ff; /* Light blue color */
+  padding-bottom: 30px;
+}
+
+.content-heading p{
+  font-size: medium;
+  color: black;
+  padding-top: 15px;
+}

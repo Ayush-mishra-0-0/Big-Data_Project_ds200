@@ -7,4 +7,4 @@ streamlit run --server.port 8502 dashboard.py &
 sleep 5
 
 # Run your Python script
-python app.py
+python flask_server.py
