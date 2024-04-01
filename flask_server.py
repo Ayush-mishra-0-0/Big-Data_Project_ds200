@@ -22,6 +22,19 @@ def xg_boost():
     return render_template('xg_boost.html')
 
 
+@app.route('/find_malware.html',methods=['GET'])
+def find_malware():
+    return render_template('find_malware.html')
+
+
+
+
+@app.route('/find_malware_url.html',methods=['GET'])
+def find_malware_url():
+    return render_template('find_malware_url.html')
+
+
+
 @app.route('/Ensemble.html',methods=['GET'])
 def Ensemble():
     return render_template('Ensemble.html')
