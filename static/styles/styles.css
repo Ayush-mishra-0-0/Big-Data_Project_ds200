@@ -61,17 +61,81 @@
   color: #70a9ff; /* Light blue title color */
   font-family: DauphinPlain ;
 }
-
-
-
-/* Optional: Add hover effect for the header */
-.malware-header:hover {
-  background-color: #bdbbbb; /* Darken the background color on hover */
+.container {
+  max-width: 1200px; /* Limit container width for better readability */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 40px 20px; /* Add padding around the content */
 }
 
-.content-heading:hover {
-  background-color: #bdbbbb;
+/* Malware header styles */
+.malware-header {
+  background-color: #fff; /* White background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  padding: 30px; /* Padding for content */
+  text-align: center;
+  margin-bottom: 40px; /* Add space below the header */
 }
+
+.title h2 {
+  font-size: 36px; /* Larger font size for the title */
+  margin-bottom: 20px; /* Space below the title */
+  color: #007bff; /* Blue title color */
+}
+
+/* Content section styles */
+.content {
+  margin-top: 30px; /* Space between title and content */
+}
+
+/* Left column styles */
+.left-column {
+  width: 100%;
+}
+
+.left-column p {
+  font-size: 18px; /* Larger font size for better readability */
+  margin-bottom: 20px; /* Space between paragraphs */
+}
+
+/* Right column styles */
+.right-column {
+  margin-top: 30px; /* Space between left and right columns */
+}
+
+/* Image styles */
+.image {
+  max-width: 100%; /* Keep the image responsive */
+  height: auto;
+  display: block;
+  margin-bottom: 20px; /* Space below each image */
+}
+
+/* Increase size of image */
+@media (min-width: 768px) {
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+/* Responsive styles */
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .left-column {
+    width: 60%;
+    margin-right: 20px; /* Space between columns */
+  }
+
+  .right-column {
+    width: 35%;
+  }
+}
+
 
  .malware-header1 {
    height: 500px;

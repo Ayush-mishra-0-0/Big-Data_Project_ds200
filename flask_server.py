@@ -16,6 +16,17 @@ url='http://localhost:8502'
 def dashboard():
     return redirect(url)
     
+
+@app.route('/xg_boost.html',methods=['GET'])
+def xg_boost():
+    return render_template('xg_boost.html')
+
+
+@app.route('/Ensemble.html',methods=['GET'])
+def Ensemble():
+    return render_template('Ensemble.html')
+
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     print('Upload request received')
