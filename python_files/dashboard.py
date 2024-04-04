@@ -16,7 +16,7 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(fl, encoding="ISO-8859-1")  
 else:
-    os.chdir(r"/mnt/c/users/ayush/Project")
+    os.chdir(r"/mnt/c/users/ayush/Project/python_files/")
     df = pd.read_csv("data.csv", encoding="ISO-8859-1")
 
 st.write(df.head())  

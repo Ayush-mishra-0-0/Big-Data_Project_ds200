@@ -14,7 +14,8 @@
    text-size-adjust: 100%;
    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
    -webkit-font-smoothing: antialiased;
-   background-color: white;
+   background-color: #1c1f2c;
+   color: white;
    font-family: Arial, sans-serif;
  }
  
@@ -48,8 +49,8 @@
 }
 
 .malware-header {
-  background-color: white; /* Dark background color */
-  color: black; /* Text color */
+  background-color:  #1c1f2c; /* Dark background color */
+  color: whitesmoke; /* Text color */
   padding: 50px 20px; /* Padding for content */
   text-align: center;
   overflow: hidden;
@@ -69,7 +70,7 @@
 
 /* Malware header styles */
 .malware-header {
-  background-color: #fff; /* White background color */
+  background-color:  #1c1f2c; /* White background color */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
   padding: 30px; /* Padding for content */
@@ -146,17 +147,18 @@
    padding: 20px;
    font-size: 20px;
  }
- /* Malware Header Styles */
-.malware-header2 {
-  background-color: #333; /* Dark background color */
-  color: #fff; /* Text color */
+ .malware-header2 {
+  background-color: #3c464f; /* Light gray background color */
+  color: #000; /* Dark text color */
   padding: 20px; /* Padding for content */
   text-align: center;
 }
+
+
 /* Hide the step content by default */
-.step-content.hidden {
+/* .step-content.hidden {
   display: none;
-}
+} */
 
 
 .section {
@@ -165,11 +167,12 @@
 
 .step {
   margin-bottom: 20px; /* Add margin between steps */
-  background-color: #fff; /* Background color for steps */
+  background-color: #212535; /* Background color for steps */
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
   overflow: hidden; /* Ensure content doesn't overflow */
   transition: transform 0.3s ease, background-color 0.3s ease; /* Transition effect */
+  text-align: left;
 }
 
 .step:hover {
@@ -261,11 +264,11 @@
  }
  
  .title{
-   color :#7df9ff;
+   color : #00ff00;
  }
 
 .title1 {
-   color: #ff69b4;
+   color: #000;
 }
 
 #what-malware p {
@@ -329,6 +332,6 @@
 
 .content-heading p{
   font-size: medium;
-  color: black;
+  color: rgb(160, 150, 150);
   padding-top: 15px;
 }

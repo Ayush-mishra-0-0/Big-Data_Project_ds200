@@ -104,16 +104,16 @@ document.querySelectorAll('.step').forEach(step => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Get all step titles
-  const stepTitles = document.querySelectorAll('.step-title');
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Get all step titles
+//   const stepTitles = document.querySelectorAll('.step-title');
 
-  // Add click event listener to each step title
-  stepTitles.forEach(title => {
-    title.addEventListener('click', function() {
-      // Toggle the 'hidden' class on the step content when clicked
-      const content = this.nextElementSibling;
-      content.classList.toggle('hidden');
-    });
-  });
-});
+//   // Add click event listener to each step title
+//   stepTitles.forEach(title => {
+//     title.addEventListener('click', function() {
+//       // Toggle the 'hidden' class on the step content when clicked
+//       const content = this.nextElementSibling;
+//       content.classList.toggle('hidden');
+//     });
+//   });
+// });

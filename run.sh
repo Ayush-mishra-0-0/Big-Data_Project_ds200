@@ -1,10 +1,20 @@
 #!/bin/bash
 
-# Start the Streamlit server on port 8501
-streamlit run --server.port 8502 dashboard.py &
+# Start the Streamlit server on port 8502
+echo "Starting Streamlit server..."
+streamlit run --server.port 8500 python_files/dashboard.py &
 
 # Wait for Streamlit server to start (adjust sleep time as needed)
 sleep 5
 
-# Run your Python script
+# Check if Streamlit server is running
+# if ! curl -sSf "http://localhost:8502" >/dev/null; then
+#   echo "Error: Streamlit server failed to start."
+#   exit 1
+# fi
+
+echo "Streamlit server started successfully."
+
+# Run your Python Flask server script
+echo "Starting Python Flask server..."
 python flask_server.py

@@ -3,20 +3,20 @@
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #212e42;
 }
 
 .left-column {
     width: 50%;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #1c1f2c;
     transform: translateY(100%);
 }
 
 .right-column {
     width: 50%;
     padding: 20px;
-    background-color: #e6e6e6;
+    background-color: #1c1f2c;
     transform: translateY(100%);
 }
 
@@ -45,7 +45,7 @@
   }
 
 .information {
-    background-color: #f9f9f9;
+    background-color: #1d2228;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

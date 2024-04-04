@@ -4,6 +4,7 @@ from flask_cors import CORS
 import os
 import ast
 from kafka_connect.dstream import process_result_data
+from spark_sql import fun
 
 app = Flask(__name__)
 CORS(app)
@@ -14,11 +15,26 @@ app.secret_key = 'ayush'
 def index():
     return render_template('index.html')
 
-url = 'http://localhost:8502'
+url = 'http://localhost:8500'
 @app.route('/dashboard', methods=['GET'])
 def dashboard():
     return redirect(url)
 
+@app.route('/sql', methods=['GET'])
+def sql():
+    return render_template('sql.html')
+
+
+@app.route('/run_query', methods=['POST'])
+def run_query():
+    if request.method == 'POST':
+        query_text = request.form['queryText']
+        print("Received query:", query_text)
+        results = fun(query_text)
+        # Assuming 'results' is a string or HTML content
+        return results
+    else:
+        return jsonify({'error': 'Invalid request method'})
 @app.route('/xg_boost.html', methods=['GET'])
 def xg_boost():
     return render_template('xg_boost.html')
@@ -86,7 +102,6 @@ def result():
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(file_path)
 
-        # Run the file_det.py script on the uploaded file and capture the output
         cmd = f'python detection_models/exe/file_det.py {file_path}'
         result = os.popen(cmd).read()
         parts = result.split('{')
