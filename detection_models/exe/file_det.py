@@ -176,8 +176,8 @@ def extract_infos(fpath):
 
 
 if __name__ == '__main__':
-    classifier_path = r'C:\Users\Ayush\Project\detection_models\exe\models_pickel\classifier.pkl'
-    features_path= r'C:\Users\Ayush\Project\detection_models\exe\models_pickel\features.pkl'
+    classifier_path = r'/mnt/c/users/ayush/Project/detection_models/exe/models_pickel/classifier.pkl'
+    features_path= r'/mnt/c/users/ayush/Project/detection_models/exe/models_pickel/features.pkl'
     # Check if the file exists
     if os.path.exists(classifier_path):
         # Load the classifier model
@@ -192,7 +192,7 @@ if __name__ == '__main__':
     
     #extracting features from the PE file mentioned in the argument 
     data = extract_infos(sys.argv[1])
-    
+    print(data)
     #matching it with the features saved in features.pkl
     pe_features = list(map(lambda x:data[x], features))
     print("Features used for classification: ", pe_features)
