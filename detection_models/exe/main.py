@@ -6,8 +6,9 @@ def run_PE():
     file = input("Enter the path and name of the file : ")
     os.system("python file_det.py {}".format(file))
 
+path_url= r'C:\Users\Ayush\Project\detection_models\url\url_main.py'
 def run_URL():
-    os.system('python url/url_main.py')
+    os.system('python {}'.format(path_url))
 
 def exit():
     os.system('exit')

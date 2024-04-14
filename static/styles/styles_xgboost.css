@@ -2,19 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
+    min-height: 60vh;
     background-color: #212e42;
 }
 
 .left-column {
-    width: 50%;
+    width: 100%;
     padding: 20px;
     background-color: #1c1f2c;
     transform: translateY(100%);
 }
 
 .right-column {
-    width: 50%;
+    width: 100%;
     padding: 20px;
     background-color: #1c1f2c;
     transform: translateY(100%);

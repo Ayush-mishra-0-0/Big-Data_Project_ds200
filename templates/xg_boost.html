@@ -10,93 +10,100 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles_xgboost.css') }}">
 </head>
 <body>
-    <nav   id="navbar" class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Project</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Overview</a>
-                
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="dashboard">Dashboard</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Models Results
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/xg_boost.html">Xgboost</a></li>
-                  <li><a class="dropdown-item" href="/Ensemble.html">Ensemble</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#fileUploadModal">Find-Malware-In-Your-File</a>
-             </li>
+  <nav   id="navbar" class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Project</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Overview</a>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+              Process
+            </a>
+      
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#scrollspyHeading1">Data Collection</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading2">Data Preparation</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading3">Data Analysis</a></li>
+          </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Models Results
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/xg_boost.html">Xgboost</a></li>
+              <li><a class="dropdown-item" href="/Ensemble.html">Ensemble</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/sql">Search in data</a></li>
             </ul>
-            <div>
-                <a class="navbar-brand" href="https://twitter.com/home" target="_blank">Twitter</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="https://twitter.com/home">Linkedin</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/find_malware.html"  data-bs-target="#fileUploadModal">Find-Malware-In-Your-File</a>
+         </li>
+        </ul>
+        <div>
+            <a class="navbar-brand" href="https://twitter.com/home" target="_blank">Twitter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="https://twitter.com/home">Linkedin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <div class="container mt-4">
+      <div class="row">
+          <div class="col-md-6">
+              <div class="left-column">
+                  <h2>XGBoost Points</h2>
+                  <ul class="xgboost-points">
+                      <li>Extreme Gradient Boosting (XGBoost) is a powerful machine learning algorithm.</li>
+                      <li>It combines the predictions of multiple weak models to produce a stronger prediction.</li>
+                      <li>XGBoost is widely used for classification and regression tasks.</li>
+                      <li>It efficiently handles missing values and large datasets.</li>
+                  </ul>
+              </div>
           </div>
-        </div>
-      </nav>
-      <div class="modal fade" id="fileUploadModal" tabindex="-1" aria-labelledby="fileUploadModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="fileUploadModalLabel">Find-Malware-In-Your-File</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- File upload form -->
-                    <form id="fileUploadForm"  enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <input type="file" class="form-control" name="file" id="file">
-                        </div>
-                        <button type="submit" class="btn btn-primary">submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+          <div class="col-md-6">
+              <div class="right-column">
+                  <div class="information">
+                      <h1>Accuracy</h1>
+                      <p>Accuracy of XGBoost is 98.7 percent</p>
+                      <p>Accuracy of Cat-classifer is 98.5 percent</p>
+                  </div>
+                  <img class="image" src="{{ url_for('static', filename='images/cat_class.png') }}" alt="XGBoost Image 1">
+                  <img class="image" src="{{ url_for('static', filename='images/xg_boost.png') }}" alt="XGBoost Image 2">
+                  <!-- Add more images here -->
+              </div>
+          </div>
+      </div>
+  </div>
 
+  <div class="container mt-4">
+      <div class="row">
+          <div class="col-md-6">
+              <img src="{{ url_for('static', filename='images/plots/Distribution of malware classes in whole data set.png') }}" alt="" class="img-fluid mb-3">
+          </div>
+          <div class="col-md-6">
+              <img src="{{ url_for('static', filename='images/plots/file_det_data_1_and_0_dist.png') }}" alt="" class="img-fluid mb-3">
+          </div>
+      </div>
+  </div>
 
-   
-    <div class="container">
-        <div class="left-column">
-            <h2>XGBoost Points</h2>
-            <ul class="xgboost-points">
-                <li>Extreme Gradient Boosting (XGBoost) is a powerful machine learning algorithm.</li>
-                <li>It combines the predictions of multiple weak models to produce a stronger prediction.</li>
-                <li>XGBoost is widely used for classification and regression tasks.</li>
-                <li>It efficiently handles missing values and large datasets.</li>
-            </ul>
-        </div>
-        <div class="right-column">
-            <div class="information">
-                <h1>Accuracy</h1>
-                <p>Accuracy of XGBoost is 98.7 percent</p>
-                <p>Accuracy of Cat-classifer is 98.5 percent</p>
-            </div>
-            <img class="image" src="{{ url_for('static', filename='images/cat_class.png') }}" alt="XGBoost Image 1">
-            <img class="image" src="{{ url_for('static', filename='images/xg_boost.png') }}" alt="XGBoost Image 2">
-            <!-- Add more images here -->
-        </div>
-        
-    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/transition.js') }}"></script>

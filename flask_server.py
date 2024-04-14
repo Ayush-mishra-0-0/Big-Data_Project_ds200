@@ -119,7 +119,7 @@ def result():
         # print(type(result_dict))
         process_result_data(result_dict)
         # print("hello")
-        # print(result)
+        print(result)
         session['result'] = result
         return render_template('result.html', header=first_line, features_list=features_list, last_line=last_line)
     else:
@@ -136,6 +136,32 @@ def show_result():
     last_line = sub_parts[-1]
     last_line = last_line.split(']')[-1]
     return render_template('result.html', header=first_line, features_list=features_list, last_line=last_line)
+
+@app.route('/result_url', methods=['POST'])
+def result_url():
+    url = request.json['url']  # Assuming the data is sent as JSON
+    print(url)
+    cmd = f'python detection_models/url/url_main.py {url}'
+    result = os.popen(cmd).read()
+    session['url'] = url
+    session['result_url'] = result
+    print(result)
+    return {'result': result}  # Return the result as JSON
+
+@app.route('/show_result_url')
+def show_result_url():
+    result = session.get('result_url', 'No result available')
+    url= session.get('url', 'No url available')
+    parts = result.split('\n')
+    result= parts[1]
+    message= parts[3]
+    key= result.split(':')
+    key= key[1]
+    # print(parts)
+    # print(result)
+    # print(message)
+    print(key)
+    return render_template('result_url.html', url=url, result=result, message=message, key= key)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
