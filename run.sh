@@ -2,7 +2,11 @@
 
 # Start the Streamlit server on port 8502
 echo "Starting Streamlit server..."
-streamlit run --server.port 8500 python_files/dashboard.py &
+streamlit run --server.port 8502 python_files/dashboard_dist.py &
+
+
+echo "Starting Streamlit server..."
+streamlit run --server.port 8503 python_files/dashboard_exe.py &
 
 # Wait for Streamlit server to start (adjust sleep time as needed)
 sleep 5

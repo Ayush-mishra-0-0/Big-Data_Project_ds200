@@ -22,8 +22,18 @@
                 <a class="nav-link active" aria-current="page" href="#">Overview</a>
                 
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="dashboard">Dashboard</a>
+              </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+                  Dashboard
+                </a>
+          
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/dashboard_dist">Dist_data dashboard</a></li>
+                  <li><a class="dropdown-item" href="/dashboard_exe">Exe File dashboard</a></li>
+              </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
@@ -102,7 +112,7 @@
           <b class="is-hidden">DS200<br>Project</b>
           <b class="is-visible">Malware<br>Detection</b>
           <b class="is-hidden">Malware<br>Classification</b>
-          <b class="is-hidden">Ayush Kumar<br>Mishra</b>
+          <!-- <b class="is-hidden">Ayush Kumar<br>Mishra</b> -->
         </span>
        <p>BIG-DATA PROJECT to detect malware in any bytes file <br>
         Using Hadoop, Spark, Kafka, Xgboost, Dask, Flask</p> 

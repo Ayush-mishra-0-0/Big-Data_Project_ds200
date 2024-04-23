@@ -15,10 +15,15 @@ app.secret_key = 'ayush'
 def index():
     return render_template('index.html')
 
-url = 'http://localhost:8500'
-@app.route('/dashboard', methods=['GET'])
+url = 'http://localhost:8502'
+@app.route('/dashboard_dist', methods=['GET'])
 def dashboard():
     return redirect(url)
+
+url1 = 'http://localhost:8503'
+@app.route('/dashboard_exe', methods=['GET'])
+def dashboard1():
+    return redirect(url1)
 
 @app.route('/sql', methods=['GET'])
 def sql():
