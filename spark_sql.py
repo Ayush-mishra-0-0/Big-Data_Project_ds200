@@ -1,11 +1,17 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, regexp_replace
 
-def fun(query_text):
+def fun(query_text,csv_file):
     # Create SparkSession
     spark = SparkSession.builder.master("local[1]").appName("SparkByExamples.com").getOrCreate()
-    hdfs_path = "hdfs://mfg:9000/csv/data.csv"
+    if csv_file=='Exe_file_csv':
+        hdfs_path = "hdfs://mfg:9000/csv/2/Exe_file_csv"
+    elif csv_file=='Url_csv':
+        hdfs_path = "hdfs://mfg:9000/csv/2/Url_csv"
+    else:
+        hdfs_path = "hdfs://mfg:9000/csv/data.csv"
     
+
     # Load DataFrame from CSV
     df = spark.read.option("header", True).csv(hdfs_path)
     
@@ -27,8 +33,6 @@ def fun(query_text):
     print("Received query:", query_text)
     # No need to return query_result since it's already shown
     pandas_df = query_result.toPandas()
-
-    # Convert the pandas DataFrame to HTML
     html_content = pandas_df.to_html()
 
     return html_content

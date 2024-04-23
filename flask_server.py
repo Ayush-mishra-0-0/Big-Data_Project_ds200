@@ -29,8 +29,10 @@ def sql():
 def run_query():
     if request.method == 'POST':
         query_text = request.form['queryText']
+        csv_file = request.form['csvFile']
         print("Received query:", query_text)
-        results = fun(query_text)
+        print("Received csv file:", csv_file)
+        results = fun(query_text,csv_file)
         # Assuming 'results' is a string or HTML content
         return results
     else:
