@@ -1,10 +1,4 @@
-Here's an updated and **very detailed `README.md`** that consolidates everything you've shown:
 
-* Kafka-based streaming app
-* Flask web interface
-* ML models for `.exe` and URL malware detection
-* Spark SQL backend
-* Organized folder structure and training artifacts
 
 ---
 
